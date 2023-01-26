@@ -33,18 +33,18 @@ def calculate(side_a, side_b, hipo_c):
     elif side_a == 0:
         if (hipo_c > side_b):
             result = "{:.2f}".format((hipo_c ** 2 - side_b ** 2) ** 0.5)
-            return {"id":"200", "response":result}
+            return {"id":"200", "response":f'Cateto A: {result}'}
         else:
             return {"id":"404", "response":"Erro 6: O lado B não pode ser igual ou maior que a hipotenusa."}
     elif side_b == 0:
         if (hipo_c > side_a):
             result = "{:.2f}".format((hipo_c ** 2 - side_a ** 2) ** 0.5)
-            return {"id":"200", "response":result}
+            return {"id":"200", "response":f'Cateto B: {result}'}
         else:
             return {"id":"404", "response":"Erro 7: O lado A não pode ser igual ou maior que a hipotenusa."}
     elif hipo_c == 0:
         result = "{:.2f}".format((side_a ** 2 + side_b ** 2) ** 0.5)
-        return {"id":"200", "response":result}
+        return {"id":"200", "response":f'Hipotenusa C: {result}'}
     else:
         return {"id":"404", "response":"Para calcular, preencha apenas dois lados do triângulo."}
 
