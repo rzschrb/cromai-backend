@@ -19,10 +19,15 @@ def index():
 # Erro: Irá ocorrer caso todos os lados sejam preenchidos.
 @app.route('/calculate/<side_a>/<side_b>/<hipo_c>/')
 def calculate(side_a, side_b, hipo_c):
+    strSideA = side_a
+    strSideB = side_b
+    strSideC = hipo_c
     side_a = float(side_a)
     side_b = float(side_b)
     hipo_c = float(hipo_c)
-    if side_a <= 0 and side_b <= 0 and hipo_c <= 0:
+    if len(strSideA) > 25 or len(strSideB) > 25 or len(strSideC) > 25:
+        return {"id":"404", "response":"Erro 8: Número muito grande para calcular Pitágoras."}
+    elif side_a <= 0 and side_b <= 0 and hipo_c <= 0:
         return {"id":"404", "response":"Erro 1: Ao menos dois lados do triângulo devem ser positivos."}
     elif side_a <= 0 and side_b <= 0:
         return {"id":"404", "response":"Erro 2: Ao menos dois lados do triângulo devem ser positivos."}
@@ -33,18 +38,18 @@ def calculate(side_a, side_b, hipo_c):
     elif side_a == 0:
         if (hipo_c > side_b):
             result = "{:.2f}".format((hipo_c ** 2 - side_b ** 2) ** 0.5)
-            return {"id":"200", "response":f'Cateto A: {result}'}
+            return {"id":"200", "response":f'É um triangulo retangulo com o Cateto A de: {result}'}
         else:
             return {"id":"404", "response":"Erro 6: O lado B não pode ser igual ou maior que a hipotenusa."}
     elif side_b == 0:
         if (hipo_c > side_a):
             result = "{:.2f}".format((hipo_c ** 2 - side_a ** 2) ** 0.5)
-            return {"id":"200", "response":f'Cateto B: {result}'}
+            return {"id":"200", "response":f'É um triangulo retangulo com o Cateto B de: {result}'}
         else:
             return {"id":"404", "response":"Erro 7: O lado A não pode ser igual ou maior que a hipotenusa."}
     elif hipo_c == 0:
         result = "{:.2f}".format((side_a ** 2 + side_b ** 2) ** 0.5)
-        return {"id":"200", "response":f'Hipotenusa C: {result}'}
+        return {"id":"200", "response":f'É um triangulo retangulo com a hipotenusa C de: {result}'}
     else:
         return {"id":"404", "response":"Para calcular, preencha apenas dois lados do triângulo."}
 
