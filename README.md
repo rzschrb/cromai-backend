@@ -1,11 +1,11 @@
 
-# Space Cromai Endpoint
+# Space Cromai Endpoint 🧑‍🚀
 
 Endpoint para a calculadora de teorema de pitagoras desenvolvido para o desafio do Space Cromai proposto pela Cromai.
 
 Desenvolvido utilizando Python + Flask.
 
-## Instalação
+## Instalação ⚙️
 
 Clone o repositorio (estarei usando clone por HTTPS) e instale as dependencias utilizando o pip.
 
@@ -23,7 +23,7 @@ Após as dependencias serem instaladas apenas utilize o comando do flask dentro 
 
 Ele irá abrir abrir um `localhost` na porta `5000` permitindo você acessar pelo seu navegador na seguinte url: `http://localhost:5000/`
     
-## Documentação da API
+## Documentação da API 📘
 
 #### Retorna resposta da rota principal
 
@@ -44,7 +44,7 @@ Ele irá abrir abrir um `localhost` na porta `5000` permitindo você acessar pel
 | `hipotenusa`      | `string` | Valor da hipotenusa|
 
 
-## Uso/Exemplos
+## Uso/Exemplos 🗒️
 
 #### Como utilizar
 
